@@ -2,22 +2,20 @@
 %bcond_without	tests	# unit tests
 
 %define		module	tzdata
-Summary:	-
-Summary(pl.UTF-8):	-
-# Name must match the python module/package name (as on pypi or in 'import' statement)
+Summary:	zic-compiled binaries for the IANA time zone database
 Name:		python3-%{module}
 Version:	2025.1
-Release:	0.1
-License:	- (enter GPL/GPL v2/GPL v3/LGPL/BSD/BSD-like/other license name here)
+Release:	1
+License:	Apache v2.0
 Group:		Libraries/Python
 # if pypi:
 #Source0Download: https://pypi.org/simple/tzdata/
 Source0:	https://files.pythonhosted.org/packages/source/t/tzdata/%{module}-%{version}.tar.gz
 # Source0-md5:	013118ba85241776241aa07d8029660a
 URL:		https://pypi.org/project/tzdata/
-BuildRequires:	python3-modules >= 1:3.2
 BuildRequires:	python3-build
 BuildRequires:	python3-installer
+BuildRequires:	python3-modules >= 1:3.2
 %if %{with tests}
 BuildRequires:	python3-pytest
 BuildRequires:	python3-pytest-subtests
@@ -29,17 +27,10 @@ BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-
-%package apidocs
-Summary:	API documentation for Python %{module} module
-Summary(pl.UTF-8):	Dokumentacja API modułu Pythona %{module}
-Group:		Documentation
-
-%description apidocs
-API documentation for Python %{module} module.
-
-%description apidocs -l pl.UTF-8
-Dokumentacja API modułu Pythona %{module}.
+This is a Python package containing zic-compiled binaries for the IANA
+time zone database. It is intended to be a fallback for systems that
+do not have system time zone data installed (or don't have it
+installed in a standard location), as a part of PEP 615.
 
 %prep
 %setup -q -n %{module}-%{version}
