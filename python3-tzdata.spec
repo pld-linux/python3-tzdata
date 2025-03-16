@@ -63,8 +63,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS CREDITS ChangeLog NEWS README THANKS TODO
-%dir %{py3_sitescriptdir}/%{module}
-%{py3_sitescriptdir}/%{module}/*.py
-%{py3_sitescriptdir}/%{module}/__pycache__
-%{py3_sitescriptdir}/%{module}-%{version}-py*.egg-info
+%doc NEWS.md README.rst
+%{py3_sitescriptdir}/%{module}
+%{py3_sitescriptdir}/%{module}-%{version}.dist-info
