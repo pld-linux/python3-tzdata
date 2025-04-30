@@ -4,14 +4,14 @@
 %define		module	tzdata
 Summary:	zic-compiled binaries for the IANA time zone database
 Name:		python3-%{module}
-Version:	2025.1
+Version:	2025.2
 Release:	1
 License:	Apache v2.0
 Group:		Libraries/Python
 # if pypi:
 #Source0Download: https://pypi.org/simple/tzdata/
 Source0:	https://files.pythonhosted.org/packages/source/t/tzdata/%{module}-%{version}.tar.gz
-# Source0-md5:	013118ba85241776241aa07d8029660a
+# Source0-md5:	1e0a85189737abbc555fbcf139e989eb
 URL:		https://pypi.org/project/tzdata/
 BuildRequires:	python3-build
 BuildRequires:	python3-installer
